@@ -1,14 +1,8 @@
-import os
-from flask import Flask, request
+from flask import Flask           # import flask
+app = Flask(__name__)             # create an app instance
 
-app = Flask(__name__)
-
-
-@app.route('/')
-def index():
-    return 'HelloWorld, Web App with Python Flask!'
-
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
+@app.route("/")                   # at the end point /
+def hello():                      # call method hello
+    return "Hello World!"         # which returns "hello world"
+if __name__ == "__main__":        # on running python app.py
+    app.run()                     # run the flask app
